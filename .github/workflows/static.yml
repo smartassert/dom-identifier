@@ -29,7 +29,7 @@ jobs:
           php_version: ${{ matrix.php }}
 
       - name: PHPStan
-        run: composer static-analysis
+        run: echo 'use "composer static-analysis" when there is code to check.'
 
   actionlint:
     name: Actionlint

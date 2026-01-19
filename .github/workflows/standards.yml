@@ -53,4 +53,4 @@ jobs:
           args: --ignore-platform-reqs --quiet
 
       - name: Run
-        run: echo 'use "composer cs-phpcs" when there is code to check.'
+        run: composer cs-phpcs

@@ -1,0 +1,43 @@
+name: Static Analysis
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  phpstan:
+    name: PHPStan - PHP ${{ matrix.php }}
+    strategy:
+      matrix:
+        php: ['8.4', '8.5']
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: Download dependencies
+        uses: php-actions/composer@v6
+        with:
+          php_version: ${{ matrix.php }}
+
+      - name: PHPStan
+        run: echo 'use "composer static-analysis" when there is code to check.'
+
+  actionlint:
+    name: Actionlint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run actionlint
+        run: docker run --rm -v "$PWD:/repo" --workdir /repo rhysd/actionlint:latest -color

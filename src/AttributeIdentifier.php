@@ -6,13 +6,12 @@ namespace SmartAssert\DomIdentifier;
 
 class AttributeIdentifier extends ElementIdentifier implements AttributeIdentifierInterface
 {
-    private string $attributeName = '';
-
-    public function __construct(string $locator, string $attributeName, ?int $ordinalPosition = null)
-    {
+    public function __construct(
+        string $locator,
+        private string $attributeName,
+        ?int $ordinalPosition = null
+    ) {
         parent::__construct($locator, $ordinalPosition);
-
-        $this->attributeName = $attributeName;
     }
 
     public function __toString(): string

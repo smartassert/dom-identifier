@@ -11,14 +11,10 @@ class ElementLocator implements \Stringable, ElementLocatorInterface
     private const DELIMITER_ESCAPE = '\\';
     private const POSITION_DELIMITER = ':';
 
-    private string $locator;
-    private ?int $ordinalPosition;
-
-    public function __construct(string $locator, ?int $ordinalPosition = null)
-    {
-        $this->locator = $locator;
-        $this->ordinalPosition = $ordinalPosition;
-    }
+    public function __construct(
+        private string $locator,
+        private ?int $ordinalPosition = null
+    ) {}
 
     public function __toString(): string
     {

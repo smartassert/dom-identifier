@@ -6,13 +6,9 @@ namespace SmartAssert\DomIdentifier;
 
 class InvalidJsonException extends \Exception
 {
-    private string $json;
-
-    public function __construct(string $json)
+    public function __construct(private string $json)
     {
         parent::__construct('Invalid json: "' . $json . '"');
-
-        $this->json = $json;
     }
 
     public function getJson(): string

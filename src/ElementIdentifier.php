@@ -13,7 +13,7 @@ class ElementIdentifier extends ElementLocator implements ElementIdentifierInter
         $string = '$' . parent::__toString();
 
         if (null !== $this->parentIdentifier) {
-            $string = (string) $this->parentIdentifier . ' >> ' . $string;
+            $string = $this->parentIdentifier . ' >> ' . $string;
         }
 
         return $string;

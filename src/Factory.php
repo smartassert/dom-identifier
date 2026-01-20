@@ -9,7 +9,7 @@ use webignition\BasilValueExtractor\ElementIdentifierExtractor;
 use webignition\BasilValueExtractor\VariableValueExtractor;
 use webignition\QuotedStringValueExtractor\QuotedStringValueExtractor;
 
-readonly class Factory
+readonly class Factory implements FactoryInterface
 {
     private const string POSITION_REGEX = '/:(-?[0-9]+|first|last)$/';
 

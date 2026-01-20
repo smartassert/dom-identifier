@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SmartAssert\DomIdentifier;
 
-class Serializer
+class Serializer implements SerializerInterface
 {
     public const KEY_PARENT = 'parent';
     public const KEY_LOCATOR = 'locator';

@@ -38,7 +38,9 @@
         ]
     },
     "require": {
-        "php": "^8.4"
+        "php": "^8.4",
+        "webignition/basil-value-extractor": "^1.0",
+        "webignition/quoted-string-value-extractor": "^0.4.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.92",
